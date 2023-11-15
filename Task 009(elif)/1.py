@@ -14,7 +14,10 @@ elif comand == '*':
 elif comand == '/':
     num1 = float(input('Введите делимое: '))
     num2 = float(input('Введите делитель: '))
-    print(num1,'/',num2,'=',num1/num2)
+    if num2 != 0:
+        print(num1, '/', num2, '=', num1 / num2)
+    else:
+        print('Деление на ноль запрещенно')
 elif comand == '-':
     num1 = float(input('Введите число: '))
     num2 = float(input('Введите вычитаемое: '))
