@@ -1,0 +1,5 @@
+f = open("foo.txt", "w")
+f.writelines(["cat\n", "dog\n"])
+f.close()
+f = open("foo.txt", "r")
+print(f.read())
