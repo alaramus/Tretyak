@@ -6,4 +6,3 @@ def cal(y, m):
 yy = int(input('year: '))
 mm = int(input('month: '))
 print(cal(yy, mm))
-
