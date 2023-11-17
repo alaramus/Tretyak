@@ -1,6 +1,6 @@
 import calendar
 def cal(y, m):
-    return(calendar.month(yy, mm))
+    return(calendar.month(yy, mm))     # NO PRINT!!!
 
 
 yy = int(input('year: '))
