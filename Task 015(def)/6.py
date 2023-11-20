@@ -1,13 +1,14 @@
-def year(leap):
-    if leap % 365 == 0:
+def year(leap_year):
+    if leap_year % 365 == 0:
         return ('Обычный год')
     else:
         return ('Високосный год')
 
+
 while True:
-    leap = int(input('Введи количество дней: '))
-    if leap in range(365,367):
-        print(year(leap))
+    num = int(input('Введи количество дней: '))
+    if num in range(365,367):
+        print(year(num))
         break
     else:
         print('Введите число 365 или 366')
