@@ -14,6 +14,7 @@ def multiply(x, y):
 def divide(x, y):
     return x / y
 
+choice = ''
 
 while True:
     choice = input("Выберите действие (+ - * /): ")            # Почему тут ???
