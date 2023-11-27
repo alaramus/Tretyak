@@ -3,7 +3,9 @@ def extract_capital_words(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             text = file.read()
             words = text.split()
-            capital_words = [word for word in words if word[0].isupper()]
+            capital_words = list([word for word in words if word[0].isupper()])
+            aa = list()
+            bb = []
             return capital_words
     except FileNotFoundError:
         return
