@@ -2,8 +2,8 @@
 
 def capital_letter(x, y):
     for w in x.split():
-        if w.startswith(y):  # ??
-            return w
+        if w.startswith(y):
+            return w  # returns only the first word... How to create a cycle?
 
 
 text = open('text.txt', 'r', encoding='utf-8')
