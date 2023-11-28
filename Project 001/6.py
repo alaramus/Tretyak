@@ -6,12 +6,9 @@ def extract_words(file_path):
 
 def extract_capital_words(words):
     capital_words = [word for word in words if word[0].isupper()]
-    return capital_words
+    print (capital_words)
 
 
 file_path = open('text.txt', 'r', encoding='utf-8')
 words = extract_words(file_path)
-capital_words_list = extract_capital_words(words)
-if capital_words_list:
-    for word in capital_words_list:
-        print(word)
+extract_capital_words(words)
