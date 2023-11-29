@@ -15,7 +15,7 @@ def extract_numbers(bunch: list[str]):
     print('text type: {} text itself: "{}"'.format(type(text), text))
     print('text type: {} text itself: {}'.format(type(text1), text1))
     print('text type: {} text itself: {}'.format(type(text2), text2))
-    '''numbers = re.findall('\d', ' '.join(bunch))'''
+    '''numbers = re.findall('\d', ' '.join(bunch))'''             #регуляр шаблон поиска подстрок в тексте
     store = []
     for item in bunch:
         if item.isdigit():                     # Выбирает только цифры выделеные пробелом с двух сторон ?
