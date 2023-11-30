@@ -34,4 +34,3 @@ bunch = extract_words(file_path)
 print('Весь текст из файла: ', extract_words(file_path))
 print('Все цифры из списка: ', extract_numbers(bunch), extract_numbers_minus(bunch))
 print('Все слова с 6 буквами: ', extract_six_letters(bunch))
-
