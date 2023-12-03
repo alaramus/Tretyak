@@ -5,6 +5,7 @@ def fibonacci(num):
         next_number = sequence[-1] + sequence[-2]
         sequence.append(next_number)
     return sequence
+
 def number(num):
     current_index = 1
     arr2 = []
