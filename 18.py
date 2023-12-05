@@ -12,3 +12,10 @@ if nun:
 
     print(f'Буквы: {word}')
     print(f'Цифры: {number}')
+def num(x):
+    print(x)
+    if x < 0 or x >= 100 :
+        return 0
+    return num(x+1)
+
+print(num(7))

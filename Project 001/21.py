@@ -1,7 +1,7 @@
 import re
 
 def extract_emails(text):
-    email_pattern = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+    email_pattern = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/gi')
     emails = email_pattern.findall(text)
     return emails
 
@@ -15,9 +15,5 @@ input_text = input('введите текст: ')
 found_emails = extract_emails(input_text)
 
 print(found_emails)
-
-#Лалола Лалоу!
-#Нужен ответ на письмо от lalola@Laloy-ch.com.
-#Отправить копию sergex-lid@dkf.net- это важно
 
 # Лалола Лалоу! Нужен ответ на письмо от lalola@Laloy-ch.com. Отправить копию sergex-lid@dkf.net- это важно
