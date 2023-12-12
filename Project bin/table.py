@@ -1,10 +1,11 @@
 import sqlite3
 import requests
 
-api_url = "Подставить свой url"
+api_url = "Вставить свой URL"
 
 def create_table():
     conn = None
+    cur = None
     try:
         conn = sqlite3.connect('binance.sql')
         cur = conn.cursor()
@@ -14,11 +15,14 @@ def create_table():
         error_message = f"SQLite error when creating table: {e}"
         print(error_message)
     finally:
-        if conn:
+        if cur is not None:
+            cur.close()
+        if conn is not None:
             conn.close()
 
 def insert_data(data):
     conn = None
+    cur = None
     try:
         conn = sqlite3.connect('binance.sql')
         cur = conn.cursor()
@@ -28,8 +32,11 @@ def insert_data(data):
         error_message = f"SQLite error when populating table: {e}"
         print(error_message)
     finally:
-        if conn:
+        if cur is not None:
+            cur.close()
+        if conn is not None:
             conn.close()
+
 
 def get_api_data(api_url):
     response = requests.get(api_url)
