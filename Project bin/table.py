@@ -44,7 +44,6 @@ def get_api_data(api_url):
         return response.json()
     else:
         print(f"Error working with API: {response.status_code}")
-        return None
 
 user_data_list = get_api_data(api_url)
 
