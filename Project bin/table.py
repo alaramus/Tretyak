@@ -34,9 +34,9 @@ def find_difference():
     try:
         with sqlite3.connect('binance2.sql') as conn:
             cur = conn.cursor()
-            cur.execute('SELECT MAX(High), MAX(Low) FROM kline_data')
+            cur.execute('SELECT MAX(High), MAX(Low) FROM kline_data')         #('28580.00000000', '27281.44000000')
             result = cur.fetchone()                      #почему fetchall ?
-            print(result)                           #('28580.00000000', '27281.44000000')
+            print(result)
             max_high, max_low = result
             if max_high > max_low:
                 difference = float(max_high) - float(max_low)
@@ -56,10 +56,9 @@ def calculate_price_difference(data):
 
     print(f'list in: {data}')
 
-    high_values = list(map(extract_high, data))     #функция, которую нужно применить к каждому элементу, последовательность (список, кортеж, строка)
+    high_values = list(map(extract_high, data))                 #функция, которую нужно применить к каждому элементу, последовательность (список, кортеж, строка)
     low_values = list(map(extract_low, data))
     print(f'list out: {high_values}')
-
 
     # def get_max_values(values):
     #     return max(values)
@@ -69,12 +68,19 @@ def calculate_price_difference(data):
 
 
     def get_max_values(numbers):
-        def is_not_none(x):         #функция- фильтр
-            return x is not None
+        def num_max(x):
+            return x == max(numbers)
 
-        not_none_numbers = filter(is_not_none, numbers)     #функция- фильтр, объект
+        max_numbers = filter(num_max, numbers)
+        return float(next(max_numbers))                  #что такое next ?
 
-        return max(not_none_numbers)
+    # def get_max_values(numbers):
+    #     def is_not_none(x):         #функция- фильтр
+    #         return x is not None
+    #
+    #     not_none_numbers = filter(is_not_none, numbers)     #функция- фильтр, объект
+    #
+    #     return max(not_none_numbers)
 
     max_high = get_max_values(high_values)
     max_low = get_max_values(low_values)
